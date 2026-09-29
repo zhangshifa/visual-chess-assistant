@@ -1,0 +1,9 @@
+<resources>
+    <color name="board_bg">#f0d9a8</color>
+    <color name="board_line">#7a5230</color>
+    <color name="red_piece">#c62828</color>
+    <color name="black_piece">#212121</color>
+    <color name="overlay_accent">#1565c0</color>
+    <color name="bg_dark">#101418</color>
+    <color name="good_green">#2e7d32</color>
+</resources>

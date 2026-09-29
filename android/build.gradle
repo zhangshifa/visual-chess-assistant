@@ -1,0 +1,19 @@
+// 顶层构建文件：复用「闪光点」项目的 AGP 8.2.1 + 腾讯云 Maven 镜像配置。
+buildscript {
+    repositories {
+        maven { url "https://mirrors.cloud.tencent.com/nexus/repository/maven-public/" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.1'
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url "https://mirrors.cloud.tencent.com/nexus/repository/maven-public/" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

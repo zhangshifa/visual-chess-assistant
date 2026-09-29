@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <!-- 顶部状态栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="#1b2228">
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="视觉象棋助手 · 摄像头识别"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvEval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="评分 0"
+            android:textColor="#ffd54f"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- 摄像头预览 + 识别叠加层 -->
+    <FrameLayout
+        android:id="@+id/cameraFrame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextureView
+            android:id="@+id/cameraView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.visualchess.ui.BoardOverlayView
+            android:id="@+id/overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <!-- 控制按钮 -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0c0f12">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <Button android:id="@+id/btnDetect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="识别棋盘" />
+            <Button android:id="@+id/btnSwitchSide" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="切换视角" />
+            <Button android:id="@+id/btnAIMove" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AI 走子" />
+            <Button android:id="@+id/btnSimulate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="模拟对局" />
+            <Button android:id="@+id/btnAnalyze" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="分析局面" />
+            <Button android:id="@+id/btnManual" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="手动摆子" />
+            <Button android:id="@+id/btnReset" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="重置" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- 着法记录 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#0c0f12">
+
+        <TextView
+            android:id="@+id/tvMoves"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="#cfd8dc"
+            android:textSize="13sp"
+            android:text="着法记录：（点击「识别棋盘」从摄像头读取局面；或「手动摆子」自行摆放）" />
+    </ScrollView>
+</LinearLayout>
